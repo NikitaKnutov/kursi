@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить ребенка</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Добавить ребенка</h1>
+        <button onclick="location.href='/'">На главную</button>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="location.href='/profile'">Перейти в профиль</button>
+        </div>
+        <div class="content">
+            <form action="/add_child" method="post">
+                <label for="name">ФИО:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="birth_date">Дата рождения:</label>
+                <input type="date" id="birth_date" name="birth_date" required>
+                <label for="gender">Пол:</label>
+                <select id="gender" name="gender" required>
+                    <option value="Мужской">Мужской</option>
+                    <option value="Женский">Женский</option>
+                </select>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header button {
+        background-color: #555;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .header button:hover {
+        background-color: #777;
+    }
+    .sidebar {
+        width: 20%;
+        background-color: #ddd;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .content {
+        width: 75%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #555;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .sidebar button:hover {
+        background-color: #777;
+    }
+    .content form {
+        display: flex;
+        flex-direction: column;
+    }
+    .content label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .content input, .content select {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .content button {
+        padding: 10px;
+        background-color: #555;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .content button:hover {
+        background-color: #777;
+    }
+</style>

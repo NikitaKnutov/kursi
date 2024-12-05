@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Профиль пользователя</h1>
+        <button onclick="location.href='/'">На главную</button>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <button onclick="location.href='/children_list'">Список детей</button>
+            <button onclick="location.href='/enrollments_list'">Курсы моих детей</button>
+        </div>
+        <div class="content">
+            <div class="user-info">
+                <p>Имя: {{ name }}</p>
+                <p>Email: {{ email }}</p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header button {
+        background-color: #555;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .header button:hover {
+        background-color: #777;
+    }
+    .sidebar {
+        width: 20%;
+        background-color: #ddd;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .content {
+        width: 75%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #555;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .sidebar button:hover {
+        background-color: #777;
+    }
+    .user-info {
+        margin-top: 20px;
+    }
+    .user-info p {
+        margin: 10px 0;
+    }
+    .enrollments {
+        margin-top: 20px;
+    }
+    .enrollments ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .enrollments li {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .enrollments form {
+        display: inline;
+    }
+    .enrollments button {
+        background-color: #d9534f;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .enrollments button:hover {
+        background-color: #c9302c;
+    }
+</style>
