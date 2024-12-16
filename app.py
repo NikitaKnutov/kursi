@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template, session, redirect, url_for
 import sqlite3
+import os
 
 app = Flask(__name__)
 app.secret_key = '761-922-263'  # Секретный ключ для сессий
@@ -373,6 +374,8 @@ def teachers():
 
     return render_template('enrollments_list.html', enrollments=enrollments)
 
+
 if __name__ == '__main__':
     init_db()
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Используйте порт из Render или 5000 по умолчанию
+    app.run(host='0.0.0.0', port=port, debug=True)
