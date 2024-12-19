@@ -104,7 +104,8 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             z-index: 1000;
-            width: 300px;
+            width: 90%;
+            max-width: 300px;
         }
         .registration-form.active, .login-form.active {
             display: block;
@@ -141,6 +142,22 @@
         .btn-outline-light:hover {
             background-color: white;
             color: black;
+        }
+
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 768px) {
+            .course {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .course {
+                width: 100%;
+            }
+            .main_name {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
